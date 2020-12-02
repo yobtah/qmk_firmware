@@ -62,9 +62,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Runs just one time when the keyboard initializes.
 void matrix_init_user(void) {
+  // massdrop LED programs defined in qmk_firmware/tmk_core/protocol/arm_atsam/led_matrix_programs.c
   led_animation_id = 7;
   led_lighting_mode = LED_MODE_KEYS_ONLY;
-  gcr_desired = 127;
+  // LED_GCR_MAX is 165 and LED_GCR_STEP is 10
+  // both defined in config_led.h
+  gcr_desired = 50;
 
 };
 
